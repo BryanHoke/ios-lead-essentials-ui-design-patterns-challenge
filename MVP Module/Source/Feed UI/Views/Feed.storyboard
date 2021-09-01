@@ -14,10 +14,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="clu-9B-M8g">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="clu-9B-M8g" customClass="ErrorView" customModule="MVP" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-g1-bN0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
+                                    <state key="normal" title="Error label"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="O2f-g1-bN0" firstAttribute="top" secondItem="clu-9B-M8g" secondAttribute="top" id="JPh-65-ESx"/>
+                                <constraint firstItem="O2f-g1-bN0" firstAttribute="leading" secondItem="clu-9B-M8g" secondAttribute="leading" id="MXm-ob-tti"/>
+                                <constraint firstAttribute="bottom" secondItem="O2f-g1-bN0" secondAttribute="bottom" id="S14-gf-bUi"/>
+                                <constraint firstAttribute="trailing" secondItem="O2f-g1-bN0" secondAttribute="trailing" id="jRJ-9I-XID"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="button" destination="O2f-g1-bN0" id="3fc-ts-0nF"/>
+                            </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="pGT-Qn-vv2">
                             <rect key="frame" x="0.0" y="645.00000034679067" width="414" height="16"/>
