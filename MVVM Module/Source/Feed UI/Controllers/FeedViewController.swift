@@ -29,13 +29,16 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 		title = viewModel?.title
 		viewModel?.onLoadingStateChange = { [weak self] isLoading in
 			if isLoading {
-				self?.errorView?.hideMessage()
 				self?.refreshControl?.beginRefreshing()
 			} else {
 				self?.refreshControl?.endRefreshing()
 			}
 		}
 		viewModel?.onFeedLoadError = { [weak self] message in
+			guard let message = message else {
+				self?.errorView?.hideMessage()
+				return
+			}
 			self?.errorView?.show(message: message)
 		}
 	}
